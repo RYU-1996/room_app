@@ -1,0 +1,162 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//登録ページ
+.device {
+  padding-top: 36px;
+  font-size: 16px;
+}
+
+.device_frame {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 0px auto;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.device_frame p {
+  font-size: 16px;
+}
+
+.device_inner {
+  width: 360px;
+  margin: 0px auto;
+}
+
+.mandatory {
+  color: #fff;
+  background-color: #ff0000a8;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 0 5px;
+  width: 25px;
+  height: 15px;
+  display: inline;
+  position: relative;
+  left: -195px;
+  top: 28px;
+}
+
+.mandatory p {
+  font-size: 10px;
+}
+
+.user_new_account {
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.new_account_button {
+  color: #fff;
+  border-color: #007bff;
+  background-color: #4a90e2;
+  padding: 6px 12px;
+  border: 1px;
+  margin: 24px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.login {
+  color: #007bff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none; 
+}
+
+
+//ログインページ
+.login_title {
+  font-size: 16px;
+}
+
+.mandatory {
+  color: #fff;
+  background-color: #ff0000a8;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 0 5px;
+  width: 25px;
+  height: 15px;
+  display: inline;
+  position: relative;
+  left: -195px;
+  top: 28px;
+}
+
+.mandatory p {
+  font-size: 10px;
+}
+
+.login_form {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 0px auto;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.login_button {
+  color: #fff;
+  border-color: #007bff;
+  background-color: #4a90e2;
+  padding: 6px 12px;
+  border: 1px;
+  margin: 24px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.user_input_form {
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+new_account {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

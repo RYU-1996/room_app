@@ -1,0 +1,26 @@
+<div class="login_container">
+  <div class="login_frame">
+    <p class="login_title">ログイン</p>
+    <div class="login_form">
+      <%= form_for @user do |f| %>
+        <ul>
+          <li>
+            <p class="mandatory">必須</p>
+            <%= f.text_field :email, placeholder:"メールアドレス", class:"user_input_form" %>
+          </li>
+          <li>
+            <p class="mandatory">必須</p>
+            <%= f.text_field :password, placeholder:"パスワード", class:"user_input_form" %>
+          </li>
+          <li>
+            <%= f.submit "ログイン", class:"button login_button" %>
+          </li>
+          <li>
+            <%= link_to "新しいアカウントを作成", 'new_account', class:"new_account" %>
+          </li>
+        </ul>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
