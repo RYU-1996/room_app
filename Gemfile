@@ -59,3 +59,7 @@ gem 'bcrypt',  '3.1.12'
 
 gem 'ransack'
 
+gem 'devise'
+
+gem 'pry-rails'
+

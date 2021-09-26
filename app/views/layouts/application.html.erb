@@ -17,14 +17,14 @@
           <img alt="サイトのロゴ画像" src="	https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
         <% end %>
         <div class="header-search">
-          <input></input>
-          <input></input>
+          <input>
+          <input>
         </div>
       </div>
       <div class="header-right-nav">
         <% if @current_user %>
           <%= link_to @current_user.name, "/users/#{@current_user.id}/edit" %>
-          <%= link_to "ログアウト", logout_path, {method:"post"} %>
+          <%= link_to "ログアウト", users_logout_path, {method:"post"} %>
         <% else %>
           <%= link_to "ログイン", users_login_path, class:"login-button"%>
         <% end %>

@@ -140,13 +140,218 @@ new_account {
   text-decoration: none;
 }
 
+//アカウントページ
+.side_menu {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 15px;
+}
+
+.user_account {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.user_account:hover {
+  border-right: 3px solid #4a90e2;
+  color: #4a90e2;
+}
+
+.user_profile {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.user_profile:hover {
+  border-right: 3px solid #4a90e2;
+  color: #4a90e2;
+}
+
+.user_account_box {
+  background-color: #F6F8F9;
+  border-left: 2px solid #e2e2e2;
+}
+
+.user_view_box {
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
+
+.update_content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.row {
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
+  flex-wrap: wrap;
+}
+
+h5 {
+  font-size: 10px;
+}
+
+p {
+  font-weight: bold;
+}
+
+.btn_edit {
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: #fff;
+  border: 1px solid;
+  border-color: #007bff;
+  text-align: center;
+  font-weight: 400;
+  padding: 6px 12px;
+  margin: 0 16px;
+  border-radius: 4px;
+}
 
 
+//プロフィールページ（一部アカウントページと同様の箇所は入力不要）
+.user_profile_box {
+  background-color: #F6F8F9;
+  border-left: 2px solid #e2e2e2;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.user_name {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.self_introduction {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.submit_button {
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: #fff;
+  border: 1px solid;
+  border-color: #007bff;
+  text-align: center;
+  font-weight: 400;
+  padding: 6px 12px;
+  margin: 0 16px;
+  border-radius: 4px;
+}
 
 
+//アカウント編集ページ
+.account_edit_page {
+  padding-top: 36px;
+  font-size: 16px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 49.5px;
+}
 
+.account_edit_frame {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 0px auto;
+  background-color: white;
+  border-radius: 4px;
+}
 
+.account_edit_frame h2 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: center;
+}
 
+.account_edit_inner {
+  width: 360px;
+  margin: 0px 96px;
+  text-align: center;
+}
+
+.account_edit_inner p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 18px;
+}
+
+.user_edit_form {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.submit_button {
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: #fff;
+  border: 1px solid;
+  border-color: #007bff;
+  text-align: center;
+  font-weight: 400;
+  padding: 6px 12px;
+  margin: 24px 0;
+  border-radius: 4px;
+}
+
+.btn_account_edit {
+  color: #007bff;
+  border-color: #6c757d;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 4px;
+}
+
+.btn_account_edit:hover {
+  background-color: #00000000;
+}
 
 
 

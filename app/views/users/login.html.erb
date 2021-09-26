@@ -6,17 +6,17 @@
         <ul>
           <li>
             <p class="mandatory">必須</p>
-            <%= f.text_field :email, placeholder:"メールアドレス", class:"user_input_form" %>
+            <%= f.email_field :email, placeholder:"メールアドレス", class:"user_input_form" %>
           </li>
           <li>
             <p class="mandatory">必須</p>
-            <%= f.text_field :password, placeholder:"パスワード", class:"user_input_form" %>
+            <%= f.password_field :password, placeholder:"パスワード", class:"user_input_form" %>
           </li>
           <li>
             <%= f.submit "ログイン", class:"button login_button" %>
           </li>
           <li>
-            <%= link_to "新しいアカウントを作成", 'new_account', class:"new_account" %>
+            <%= link_to "新しいアカウントを作成", new_user_path, class:"new_account" %>
           </li>
         </ul>
       <% end %>

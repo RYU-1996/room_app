@@ -2,7 +2,7 @@
   <div class="device_frame">
     <p>新しいアカウントを作成</p>
     <div class="device_inner">
-      <%= form_for @user, url: root_path do |f| %>
+      <%= form_for @user do |f| %>
         <ul>
           <li>
             <p class="mandatory">必須</p>
@@ -10,21 +10,21 @@
           </li>
           <li>
             <p class="mandatory">必須</p>
-            <%= f.text_field :email, placeholder:"メールアドレス", class:"user_new_account" %>
+            <%= f.email_field :email, placeholder:"メールアドレス", class:"user_new_account" %>
           </li>
           <li>
             <p class="mandatory">必須</p>
-            <%= f.text_field :password, placeholder:"パスワード", class:"user_new_account" %>
+            <%= f.password_field :password, placeholder:"パスワード", class:"user_new_account" %>
           </li>
           <li>
             <p class="mandatory">必須</p>
-            <%= f.text_field :password, placeholder:"パスワード確認", class:"user_new_account" %>
+            <%= f.password_field :password_confirmation, placeholder:"パスワード確認", class:"user_new_account" %>
           </li>
           <li>
             <%= f.submit "新しいアカウントを作成", class:"button new_account_button" %>
           </li>
           <li>
-            <%= link_to "すでにアカウントをお持ちの方はログイン", 'login', class:"login" %>
+            <%= link_to "すでにアカウントをお持ちの方はログイン", users_login_path, class:"login" %>
           </li>
         </ul>
       <% end %>
