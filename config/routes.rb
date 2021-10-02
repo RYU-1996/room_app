@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'top#hello'
   post '/', to: 'top#hello'
   get 'top/hello'

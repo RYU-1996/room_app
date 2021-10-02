@@ -22,15 +22,17 @@
         </div>
       </div>
       <div class="header-right-nav">
-        <% if @current_user %>
-          <%= link_to @current_user.name, "/users/#{@current_user.id}/edit" %>
+        <% if user_signed_in? %>
+          <strong><%= link_to current_user.name, "/users/#{current_user.id}/edit" %></strong>
           <%= link_to "ログアウト", users_logout_path, {method:"post"} %>
         <% else %>
-          <%= link_to "ログイン", users_login_path, class:"login-button"%>
+          <%= link_to "ログイン", users_login_path, class:"login-button" %>
+          <%= link_to "登録する", new_user_path, class:"register-button" %>
         <% end %>
-        <%= link_to "登録する", :new_user, class:"register-button" %>
       </div>
     </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     
     <%= yield %>
     

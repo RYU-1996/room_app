@@ -20,7 +20,11 @@ class RoomsController < ApplicationController
   
   def show
     @room = Room.find(params[:id])
-    @user = User.find_by(id: @room.user_id)
+    @user = User.find_by(id: session[:user_id])
   end
   
+  private
+  def
+    params.require(:room).permit(:room_name, :room_introduction, :price, :adress, :room_image)
+  end
 end
