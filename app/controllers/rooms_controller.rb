@@ -23,6 +23,10 @@ class RoomsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
   end
   
+  def list
+    @room = Room.find(params[:id])
+  end
+  
   private
   def
     params.require(:room).permit(:room_name, :room_introduction, :price, :adress, :room_image)
