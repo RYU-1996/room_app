@@ -28,8 +28,8 @@
           <%= link_to "設定", users_account_path %>
           <%= link_to "ログアウト", users_logout_path, {method:"delete"} %>
         <% else %>
-          <%= link_to "ログイン", users_login_path, class:"login-button" %>
-          <%= link_to "登録する", new_user_path, class:"register-button" %>
+          <%= link_to "ログイン", new_user_session_path, class:"login-button" %>
+          <%= link_to "登録する", new_user_registration_path, class:"register-button" %>
         <% end %>
       </div>
     </header>

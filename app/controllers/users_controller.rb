@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @users = User.all
   end
@@ -18,6 +20,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @user = current_user
     @user = User.find(params[:id])
   end
   
@@ -53,7 +56,8 @@ class UsersController < ApplicationController
   end
   
   def profile
-    @user = User.find(params[:id])
+    @user = current_user
+    @user = User.new
   end
   
   private
