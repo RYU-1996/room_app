@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   
   def show
     @user = current_user
-    @user = User.find(params[:id])
+    @rooms = @user.rooms
   end
   
   def edit
@@ -29,8 +29,9 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update(params.require(:user).permit(:name, :introduction, :image))
+      flash[:notice] = "Profile was successfully updated."
       redirect_to edit_user_url
     else
       render :edit
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
   end
   
   def account
-    @user = User.find(params[:id])
+    @user = current_user
   end
   
   def profile

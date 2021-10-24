@@ -24,9 +24,16 @@
       <div class="header-right-nav">
         <% if user_signed_in? %>
           <strong><%= link_to current_user.name, "/users/#{current_user.id}/edit" %></strong>
-          <%= link_to "ルーム登録", new_room_path %>
-          <%= link_to "設定", users_account_path %>
-          <%= link_to "ログアウト", users_logout_path, {method:"delete"} %>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://presite-potepancamp-rails-02.herokuapp.com…56fc178dcb22183561357950a68f5ad086ba7ee054974.jpg">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "ルーム登録", new_room_path %>
+              <%= link_to "設定", users_account_path %>
+              <%= link_to "ログアウト", users_logout_path, {method:"delete"} %>
+            </div>
+          </div>
         <% else %>
           <%= link_to "ログイン", new_user_session_path, class:"login-button" %>
           <%= link_to "登録する", new_user_registration_path, class:"register-button" %>

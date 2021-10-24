@@ -1,0 +1,49 @@
+<div class="container">
+  <h4>予約済みルーム一覧</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>ルーム画像</th>
+        <th>ルーム名</th>
+        <th>ルーム紹介</th>
+        <th>合計料金</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>予約確定日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each do |obj| %>
+      <tr>
+        <td>
+          <%= link_to room_path(obj.room.id) do %>
+            <% if obj.room.image.attached? %>
+              <%= image_tag obj.room.image, class:"reservations_room_img" %>
+            <% end %> 
+          <% end %>
+        </td>
+        <td>
+          <%= link_to room_path(obj.room.id) do %>
+            <p><%= obj.room.room_name %></p>
+          <% end %>
+        </td>
+        <td>
+          <p><%= obj.room.room_introduction %></p>
+        </td>
+        <td>
+          <p>¥<%= obj.number_of_people * obj.room.price %></p>
+        </td>
+        <td>
+          <p><%= obj.start_date %></p>
+        </td>
+        <td>
+          <p><%= obj.end_date %></p>
+        </td>
+        <td>
+          <p><%= obj.created_at %></p>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
