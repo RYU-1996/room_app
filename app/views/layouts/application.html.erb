@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -23,7 +25,7 @@
       </div>
       <div class="header-right-nav">
         <% if user_signed_in? %>
-          <strong><%= link_to current_user.name, "/users/#{current_user.id}/edit" %></strong>
+          <%= current_user.name %>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="https://presite-potepancamp-rails-02.herokuapp.com…56fc178dcb22183561357950a68f5ad086ba7ee054974.jpg">
