@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get 'users/account'
   get 'users/profile'
   post 'users/profile'
+  get 'reservations/index'
+  get 'reservations/confirm'
+  get 'reservations/complete'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
   resources :rooms

@@ -27,14 +27,16 @@
         <% if user_signed_in? %>
           <%= current_user.name %>
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://presite-potepancamp-rails-02.herokuapp.com…56fc178dcb22183561357950a68f5ad086ba7ee054974.jpg">
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <%= link_to "ルーム登録", new_room_path %>
-              <%= link_to "設定", users_account_path %>
-              <%= link_to "ログアウト", users_logout_path, {method:"delete"} %>
-            </div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#"><%= link_to "ルーム登録", new_room_path %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "予約済みルーム一覧", reservations_index_path %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "登録済みルーム一覧", user_path %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "設定", users_account_path %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "ログアウト", users_logout_path, {method:"delete"} %></a></li>
+            </ul>
           </div>
         <% else %>
           <%= link_to "ログイン", new_user_session_path, class:"login-button" %>
