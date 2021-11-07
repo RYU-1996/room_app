@@ -14,23 +14,26 @@
         <div class="update_content">
           <div class="row">
             <div class="icon-box">
-              <img src="https://presite-potepancamp-rails-02.herokuapp.com…56fc178dcb22183561357950a68f5ad086ba7ee054974.jpg">
+              <% if current_user.image.attached? %>
+                <%= image_tag current_user.image, class:"icon_img" %>
+              <% else %> 
+                <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg", class:"icon_img" %>
+              <% end %>
             </div>
           </div>
         </div>
         <div class="update_content">
           <div class="row">
             <div class="label">
-              <p>アイコン画像</p>
-              <p class="mandatory">必須</p>
+              <p>アイコン画像</p><p class="mandatory">必須</p>
+              <%= f.file_field :image %>
             </div>
           </div>
         </div>
         <div class="update_content">
           <div class="row">
             <div class="label">
-              <p>名前</p>
-              <p class="mandatory">必須</p>
+              <p>名前</p><p class="mandatory">必須</p>
               <%= f.text_field :name, placeholder:"名前を入力", class:"user_name" %>
             </div>
           </div>
@@ -38,8 +41,7 @@
         <div class="update_content">
           <div class="row">
             <div class="label">
-              <p>自己紹介</p>
-              <p class="mandatory">必須</p>
+              <p>自己紹介</p><p class="mandatory">必須</p>
               <%= f.text_area :introduction, placeholder:"自己紹介を入力", class:"self_introduction" %>
             </div>
           </div>
