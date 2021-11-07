@@ -9,7 +9,10 @@
             </p>
               <div class="form-area-search">
                 <p>エリア</p>
-                <input>
+                <%= search_form_for @q, url: application_set_search_path do |f| %>
+                  <%= f.search_field :address_cont, placeholder:"東京" %>
+                  <%= f.submit "探す" %>
+                <% end %>
               </div>
             <%= link_to rooms_index_path do %>
               <button class="search-button">探す</button>
