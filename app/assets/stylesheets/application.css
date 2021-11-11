@@ -29,6 +29,8 @@ header {
   border-style: none;
   width: 215px;
   height: 66px;
+  position: relative;
+  top: -45px;
 }
 
 .header-search {

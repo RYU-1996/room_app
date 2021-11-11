@@ -17,9 +17,12 @@
       <tr>
         <td>
           <%= link_to room_path(obj.room.id) do %>
-            <% if obj.room.image.attached? %>
-              <%= image_tag obj.room.image, class:"reservations_room_img" %>
-            <% end %> 
+            <!--<% if obj.room.image.attached? %>-->
+              <!--<%= image_tag obj.room.image, class:"reservations_room_img" %>-->
+            <!--<% end %>-->
+            <% if @room.image? %>
+              <%= image_tag @room.image.url, class: "room_image_detail" %>
+            <% end %>
           <% end %>
         </td>
         <td>

@@ -5,7 +5,7 @@
   <div class="room_register">
     <div class="room_register_box">
       <h3>ルーム情報登録</h3>
-        <%= form_for(@room) do |f| %>
+        <%= form_for(@room, url:{controller:'rooms', action:'create'}) do |f| %>
           <div class="update_content">
             <ul>
               <li>
@@ -16,12 +16,12 @@
               <li>
                 <h5>ルーム紹介</h5>
                 <p class="mandatory">必須</p>
-                <%= f.text_field :room_introduction, placeholder:"ルーム説明を入力", class:"new_room_area" %>
+                <%= f.text_area :room_introduction, placeholder:"ルーム説明を入力", class:"new_room_area" %>
               </li>
               <li>
                 <h5>料金</h5>
                 <p class="mandatory">必須</p>
-                <%= f.text_field :price, placeholder:"一日あたりの料金を入力", class:"new_room_area" %>
+                <%= f.number_field :price, placeholder:"一日あたりの料金を入力", class:"new_room_area" %>
               </li>
               <li>
                 <h5>住所</h5>
@@ -31,9 +31,12 @@
               <li>
                 <h5>ルーム画像</h5>
                 <p class="mandatory">必須</p>
-                <%= f.file_field :image %>
+                <% if @room.image? %>
+                  <%= image_tag @room.image.url %>
+                <% end %>
+                  <%= f.file_field :image %>
               </li>
-              <%= f.submit "登録", class: "button submit_button" %>
+              <%= f.submit "登録", class:"btn btn-primary input_submit" %> <!--class: "button submit_button"-->
             </ul>
           </div>
         <% end %>

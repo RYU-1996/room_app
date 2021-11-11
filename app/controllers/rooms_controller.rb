@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
     @room.user_id = @current_user
       if @room.save
         flash[:notice] = "Room was successfully created."
-        redirect_to :rooms
+        redirect_to action: :show
       else
         render :new
       end
@@ -24,11 +24,16 @@ class RoomsController < ApplicationController
   end
   
   def search
-    
+    @results = @q.result
   end
   
   private
   def room_params
-    params.require(:room).permit(:room_name, :room_introduction, :price, :adress, :image)
+    params.require(:room).permit(:room_name, :room_introduction, :price, :address, :image)
   end
+  
+  def set_q
+    @q = Room.ransack(params[:q])
+  end
+  
 end
