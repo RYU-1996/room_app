@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
-  def index
-    @rooms = Room.all
-  end
+  #def index
+    #@rooms = Room.all
+  #end
   
   def new
     @room = Room.new
@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
     @room.user_id = @current_user
       if @room.save
         flash[:notice] = "Room was successfully created."
-        redirect_to action: :show
+        redirect_to @room
       else
         render :new
       end
@@ -29,7 +29,7 @@ class RoomsController < ApplicationController
   
   private
   def room_params
-    params.require(:room).permit(:room_name, :room_introduction, :price, :address, :image)
+    params.require(:room).permit(:room_name, :room_introduction, :price, :address, :user_id, :image, :image_cache)
   end
   
   def set_q
