@@ -34,7 +34,7 @@
             <p><%= f.number_field :number_of_people %></p>
           </div>
       </div>
-      <%= f.submit "予約する", class: "button submit_button" %>
+      <%= link_to "予約する", reservations_confirm_path(@room.id), class: "button submit_button" %>
     <% end %>
   </div>
 </div>

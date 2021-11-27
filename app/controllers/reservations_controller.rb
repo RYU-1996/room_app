@@ -6,13 +6,13 @@ class ReservationsController < ApplicationController
   end
   
   def confirm
-    @room = Room.find(params[:id])
+    @room = Room.find(params[:format])
     @reservation = Reservation.new(reservation_params)
     @reservation.room = @room
     if @reservation.invalid?
       render template: 'rooms/show'
-    else  
-      @dates_of_reservation = (@reservation.finish_date - @reservation.start_date).to_i
+    else
+      @dates_of_reservation = (@reservation.end_date - @reservation.start_date).to_i
     end
   end
   
@@ -24,20 +24,20 @@ class ReservationsController < ApplicationController
       render template: 'rooms/show'
     elsif @reservation.save
       flash[:notice] = "Reservation was successfully created."
-      redirect_to reservations_show_path(@reservation.id)
+      redirect_to reservations_complete_path(@reservation.id)
     else
       render room_path(@reservation.room.id)
     end
   end
   
-  def show
+  def complete
     @reservation = Reservation.find(params[:id])
     @dates_of_reservation = (@reservation.end_date - @reservation.start_date).to_i
   end
   
   private
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :number_of_people, :room_id)
+    params.permit(:start_date, :end_date, :number_of_people, :room_id)
   end
   
 end
