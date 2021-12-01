@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
   end
   
   def confirm
-    @room = Room.find(params[:format])
+    @room = Room.find(params[:room_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.room = @room
     if @reservation.invalid?
@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
   end
   
   def create
-    @room = Room.find(params[:id])
+    @room = Room.find(params[:room_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.room = @room
     if params[:back]
@@ -31,13 +31,13 @@ class ReservationsController < ApplicationController
   end
   
   def complete
-    @reservation = Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:reservation_id])
     @dates_of_reservation = (@reservation.end_date - @reservation.start_date).to_i
   end
   
   private
   def reservation_params
-    params.permit(:start_date, :end_date, :number_of_people, :room_id)
+    params.permit(:start_date, :end_date, :number_of_people, :room_id, :reservation_id)
   end
   
 end

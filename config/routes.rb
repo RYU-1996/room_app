@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'reservations/index'
   get 'reservations/confirm'
   get 'reservations/:id', to:'reservations#complete'
+  post 'reservations/:id', to:'reservations#complete'
   post 'reservations/:id', to:'reservations#create' 
   get 'reservations/complete'
   get 'application/set_search'
@@ -28,4 +29,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
   resources :rooms
+  resources :reservations
 end

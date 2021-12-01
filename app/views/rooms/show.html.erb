@@ -18,7 +18,8 @@
       <p><%= @room.room_introduction %></p>
   </div>
   <div class="reservation_form">
-    <%= form_for @reservation, url: reservations_confirm_path do |f| %>
+    <%= form_with url: reservations_confirm_path do |f| %>
+      <%= f.hidden_field :room_id, value: @room.id %>
       <div class="reservation_form_content">
         <p class="price">¥<%= @room.price %>/日</p>
           <div class="label">
@@ -34,7 +35,7 @@
             <p><%= f.number_field :number_of_people %></p>
           </div>
       </div>
-      <%= link_to "予約する", reservations_confirm_path(@room.id), class: "button submit_button" %>
+      <%= f.submit "予約する", class: "button submit_button" %>
     <% end %>
   </div>
 </div>

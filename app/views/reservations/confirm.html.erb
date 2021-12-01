@@ -23,13 +23,14 @@
     <div class="reservations_new_check_content">
       <p>上記内容でよろしければ「予約を確定」を押してください</p>
     </div>
-    <%= form_for(@reservation, url:{controller:'reservations', action:'create'}) do |form| %>
-      <%= form.hidden_field :start_date %>
-      <%= form.hidden_field :end_date %>
-      <%= form.hidden_field :number_of_people %>
-      <%= form.hidden_field :room_id %>
-      <%= form.submit "予約を確定", class:"btn btn-primary input_submit" %><br>
-      <%= form.submit "ルーム詳細に戻る", name: :back, class:"btn btn-secondary input_submit" %>
+    <%= form_with url: reservations_complete_path do |f| %>
+      <%= f.hidden_field :reservation_id, value: @reservation.id %>
+      <%= f.hidden_field :start_date %>
+      <%= f.hidden_field :end_date %>
+      <%= f.hidden_field :number_of_people %>
+      <%= f.hidden_field :room_id %>
+      <%= f.submit "予約を確定", class:"btn btn-primary input_submit" %><br>
+      <%= f.submit "ルーム詳細に戻る", name: :back, class:"btn btn-secondary input_submit" %>
     <% end %> 
   </div>
 </div>

@@ -62,6 +62,8 @@ Rails.application.configure do
   config.assets.quiet = true
   
   config.web_console.whitelisted_ips = '106.181.66.140'
+  
+  config.web_console.whitelisted_ips = '106.181.68.20'
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
