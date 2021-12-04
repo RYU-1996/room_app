@@ -32,6 +32,7 @@ class ReservationsController < ApplicationController
   
   def complete
     @reservation = Reservation.find(params[:reservation_id])
+    @reservation = Reservation.new(reservation_params)
     @dates_of_reservation = (@reservation.end_date - @reservation.start_date).to_i
   end
   

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post 'users/profile'
   get 'reservations/index'
   get 'reservations/confirm'
+  get 'reservations/:id', to:'reservations#confirm'
+  post 'reservations/:id', to:'reservations#confirm'
   get 'reservations/:id', to:'reservations#complete'
   post 'reservations/:id', to:'reservations#complete'
   post 'reservations/:id', to:'reservations#create' 
@@ -25,7 +27,6 @@ Rails.application.routes.draw do
   get 'application/set_search'
   get 'rooms/create'
   post 'rooms/create'
-  post 'rooms/:id', to:'reservations#confirm'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
   resources :rooms

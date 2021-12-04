@@ -28,7 +28,7 @@
       <%= f.hidden_field :start_date %>
       <%= f.hidden_field :end_date %>
       <%= f.hidden_field :number_of_people %>
-      <%= f.hidden_field :room_id %>
+      <%= f.hidden_field :room_id, value: @room.id %>
       <%= f.submit "予約を確定", class:"btn btn-primary input_submit" %><br>
       <%= f.submit "ルーム詳細に戻る", name: :back, class:"btn btn-secondary input_submit" %>
     <% end %> 
