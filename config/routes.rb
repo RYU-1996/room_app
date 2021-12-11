@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   post 'reservations/:id', to:'reservations#confirm'
   get 'reservations/:id', to:'reservations#complete'
   post 'reservations/:id', to:'reservations#complete'
-  post 'reservations/:id', to:'reservations#create' 
+  post 'reservations/:id', to:'reservations#create'
   get 'reservations/complete'
   get 'application/set_search'
   get 'rooms/create'
