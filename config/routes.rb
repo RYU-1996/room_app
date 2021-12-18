@@ -17,16 +17,16 @@ Rails.application.routes.draw do
   get 'users/profile'
   post 'users/profile'
   get 'reservations/index'
-  get 'reservations/confirm'
-  get 'reservations/:id', to:'reservations#confirm'
-  post 'reservations/:id', to:'reservations#confirm'
-  get 'reservations/:id', to:'reservations#complete'
-  post 'reservations/:id', to:'reservations#complete'
-  post 'reservations/:id', to:'reservations#create'
-  get 'reservations/complete'
   get 'application/set_search'
   get 'rooms/create'
   post 'rooms/create'
+  get 'reservations/confirm'
+  #get 'reservations/:id', to:'reservations#confirm'
+  post 'reservations/:id', to:'reservations#confirm'
+  #get 'reservations/:id', to:'reservations#complete'
+  post 'reservations/:id', to:'reservations#complete'
+  get 'reservations/complete'
+  post 'reservations/:id', to:'reservations#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
   resources :rooms

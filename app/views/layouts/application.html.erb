@@ -16,11 +16,9 @@
           <img alt="サイトのロゴ画像" src="	https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
         <% end %>
         <div class="header-search">
-          <%= search_form_for @q, url: application_set_search_path do |f| %>
+          <%= search_form_for @q, url: rooms_path do |f| %>
             <%= f.search_field :address_cont, placeholder:"エリア" %>
             <%= f.search_field :room_name_or_room_introduction_or_price_or_address_cont, placeholder:"キーワード" %>
-            <i class="fas fa-map-marker-alt"></i>
-            <i class="fas fa-search"></i>
             <%= f.submit '探す' %>
           <% end %>
         </div>

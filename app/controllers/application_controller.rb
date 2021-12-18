@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   
   def after_sign_in_path_for(resources)
     if current_user
-      flash[:notice] = "Signed in successfully." 
+      flash[:notice] = "Signed in successfully."
       root_path 
     else
       users_profile_path 
