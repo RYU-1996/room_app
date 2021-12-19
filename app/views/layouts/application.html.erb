@@ -5,12 +5,53 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <div class="header-left-nav">
+        <%= link_to root_path do %>
+          <img alt="サイトのロゴ画像" src="	https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
+        <% end %>
+        <div class="header-search">
+          <%= search_form_for @q, url: rooms_path do |f| %>
+            <%= f.search_field :address_cont, placeholder:"エリア" %>
+            <%= f.search_field :room_name_or_room_introduction_or_price_or_address_cont, placeholder:"キーワード" %>
+            <%= f.submit '探す' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="header-right-nav">
+        <% if user_signed_in? %>
+          <%= current_user.name %>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg", class="icon_img">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#"><%= link_to "ルーム登録", new_room_path %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "予約済みルーム一覧", reservations_index_path %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "登録済みルーム一覧", user_path(id: current_user) %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "設定", users_account_path %></a></li>
+              <li><a class="dropdown-item" href="#"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></a></li>
+            </ul>
+          </div>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class:"login-button" %>
+          <%= link_to "登録する", new_user_registration_path, class:"register-button" %>
+        <% end %>
+      </div>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
     <%= yield %>
+    
+    <footer>
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>
+

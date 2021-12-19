@@ -1,0 +1,32 @@
+<div class="user_account_page">
+  <div class="side_menu">
+    <%= link_to "アカウント", users_account_path, class:"user_account" %>
+    <%= link_to "プロフィール", users_profile_path, class:"user_profile" %>
+  </div>
+  <div class="user_account_box">
+    <div class="user_view_box">
+      <div class="update_content">
+        <div class="row">
+          <h5>アカウント</h5>
+        </div>
+      </div>
+      <div class="update_content">
+        <div class="row">
+          <p>メールアドレス</p>
+        </div>
+      </div>
+      <div class="update_content">
+        <div class="row">
+          <p>パスワード</p>
+        </div>
+      </div>
+      <div class="update_content">
+        <div class="row">
+          <%= link_to "編集", edit_user_registration_path, class:"btn btn_edit" %>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>
+
+

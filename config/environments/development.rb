@@ -60,6 +60,12 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  
+  config.web_console.whitelisted_ips = '106.181.66.140'
+  
+  config.web_console.whitelisted_ips = '106.181.68.20'
+  
+  config.web_console.whitelisted_ips = '106.181.70.132'
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
@@ -73,4 +79,13 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  
+  config.action_mailer.default_url_options = { protocol: 'https', host: 'トップページアドレス' }
+  
 end
+
+Rails.application.configure do
+  config.hosts << "8a5313ace55f4e39a96f409c756d6c2d.vfs.cloud9.ap-northeast-1.amazonaws.com"
+end
+
+

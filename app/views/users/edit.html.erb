@@ -1,0 +1,32 @@
+<div class="account_edit_page">
+  <div class="account_edit_frame">
+    <h2>アカウント編集</h2>
+    <div class="account_edit_inner">
+      <%= form_for @user do |f| %>
+        <p>メールアドレス</p>
+        <div class="user_email_form">
+          <%= f.email_field :email, placeholder:"メールアドレスを入力してください", class:"user_edit_form" %>
+        </div>
+        <p>変更後パスワード（変更する場合のみ入力）</p>
+        <div class="change_password_form">
+          <%= f.password_field :password, class:"user_edit_form" %>
+        </div>
+        <p>パスワード確認用（変更する場合のみ入力）</p>
+        <div class="change_password_form">
+          <%= f.password_field :password_confirmation, class:"user_edit_form" %>
+        </div>
+        <p>現在のパスワード</p>
+        <div class="now_password_form">
+          <%= f.password_field :password, class:"user_edit_form" %>
+        </div>
+        <div class="edit_update_button">
+          <%= f.submit "更新", class: "btn submit_button" %>
+        </div>
+        <div class="back_button">
+          <%= link_to "戻る", users_account_path, class:"btn btn_account_edit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+</div>
