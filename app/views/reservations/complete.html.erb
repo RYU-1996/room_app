@@ -6,15 +6,14 @@
     </div>
     <div class="content">
       <label for="start_date">開始日</label>
-      <p class="start"><%= @reservation.start_date.strftime('%Y年%m月%d日') %></p>
+      <p class="start"><%= @reservation.start_date %></p>
     </div>
     <div class="content">
       <label for="end_date">終了日</label>
-      <p class="end"><%= @reservation.end_date.strftime('%Y年%m月%d日') %></p>
+      <p class="end"><%= @reservation.end_date %></p>
     </div>
     <div class="content">
       <label for="price">価格</label>
-      <p class="price"><%= @reservation.room.price * @reservation.number_of_people * @dates_of_reservation %>円</p>
     </div>
   </div>
 </div>

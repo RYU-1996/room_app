@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.room = @room
     if @reservation.invalid?
-      render template: 'rooms/show'
+      render "complete"
     else
       @dates_of_reservation = (@reservation.end_date - @reservation.start_date).to_i
     end
@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
   
   def complete
     @reservation = Reservation.find(params[:reservation_id])
-    #@room = Room.find(params[:room_id])
+    @room = Room.find(params[:room_id])
     @reservation = Reservation.new(reservation_params)
     @dates_of_reservation = (@reservation.end_date - @reservation.start_date).to_i
   end
